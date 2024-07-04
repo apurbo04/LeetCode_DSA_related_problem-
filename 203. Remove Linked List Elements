@@ -10,26 +10,30 @@
  */
 class Solution {
 public:
-    ListNode* removeElements(ListNode* head, int val) {
+    ListNode* removeElements(ListNode* head, int val) 
+    {
         if (head == NULL)
             return head;
 
-        if(head == NULL) return head;
-        while (head->val == val) {
+        while (head->val == val) 
+        {
             head = head->next;
             if (head == NULL)
                 return head;
         }
         ListNode* tmp = head;
-        while (tmp->next != NULL) {
-            if (val == tmp->next->val) {
+        while (tmp->next != NULL) 
+        {
+            if (val == tmp->next->val) 
+            {
                 ListNode* deleteNode = tmp->next;
                 tmp->next = tmp->next->next;
                 delete deleteNode;
             }
             if (tmp->next == NULL)
                 break;
-            else if (val != tmp->next->val) {
+            else if (val != tmp->next->val) 
+            {
                 tmp = tmp->next;
             }
         }
