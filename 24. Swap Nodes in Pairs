@@ -14,14 +14,12 @@ public:
         if (head == NULL || head->next == NULL)
             return head;
 
-        ListNode* temp1 = head;
-        ListNode* temp2 = head->next;
-        while (temp1 != NULL && temp2 != NULL) {
-            swap(temp1->val, temp2->val);
-            temp1 = temp1->next->next;
-            if (temp1 == NULL)
+        ListNode* temp = head;
+        while (temp != NULL) {
+            swap(temp->val, temp->next->val);
+            temp = temp->next->next;
+            if (temp == NULL ||temp->next == NULL )
                 break;
-            temp2 = temp2->next->next;
         }
         return head;
     }
