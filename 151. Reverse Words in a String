@@ -1,0 +1,27 @@
+class Solution {
+public:
+    string reverseWords(string s) {
+        stringstream x(s);
+        stack<string> st;
+        string ans,w;
+        int cnt=0;
+        while(x>>w)
+        {    
+            st.push(w);
+            cnt++;
+        }    
+        cout<<cnt;
+        while(!st.empty())
+        {    
+            ans+=st.top();
+            st.pop();
+            if((cnt-1)!=0) 
+            {    
+                ans+=" ";
+                cnt--;
+            }
+        }
+        
+        return ans;
+    }
+};
